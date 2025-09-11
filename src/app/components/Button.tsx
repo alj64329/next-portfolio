@@ -4,14 +4,15 @@ import React from 'react'
 // Prop, text, mode, href
 type ButtonProps ={
     text: string;
+    isSubmit:boolean;
 }
 
-const Button = ({text}:ButtonProps) => {
+const Button = ({text,isSubmit}:ButtonProps) => {
   return (
-    <div className='w-fit rounded-bourder flex m-auto gap-2 mb-6'>
+    <button type={isSubmit? "submit":"button"} className='w-fit rounded-border flex m-auto gap-2 mb-6 cursor-pointer'>
         <div>
         <div className='font-red'>...</div>
-        <a href="/" className='w-fit font-bold'>{text}</a>
+        {!isSubmit?<a href="/" className='w-fit font-bold'>{text}</a>:<span className='w-fit font-bold'>{text}</span>}
         </div>
         
         <Image
@@ -19,7 +20,7 @@ const Button = ({text}:ButtonProps) => {
         alt="Arrow"
         width={30}
         height={30}/>
-    </div>
+    </button>
   )
 }
 

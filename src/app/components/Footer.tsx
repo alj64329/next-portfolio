@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <div className='max-w-[2000px]'>
         <footer
-        className='bg-translucent bg-[url(/footer-bg-img.svg)] bg-no-repeat bg-cover'>
+        className='bg-translucent bg-[url(/footer-bg-img.svg)] bg-no-repeat bg-cover py-5'>
 
             <div className='p-5 md:py-3 flex justify-end'>
                 <ul>

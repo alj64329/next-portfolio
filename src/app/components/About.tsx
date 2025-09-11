@@ -26,7 +26,7 @@ const About = () => {
 
             </div>
 
-            <Button text="View About"/>
+            <Button text="View About" isSubmit={false}/>
         </div>
     </div>
   )

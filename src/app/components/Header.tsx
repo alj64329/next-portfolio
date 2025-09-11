@@ -24,8 +24,8 @@ const Header = () => {
         <div className='fixed md:static inset-0 top-right-md bg-myRed flex pl-[2rem] pb-[4rem] rounded-2xl w-full md:w-auto'>
           <div className='pt-[5rem] flex justify-center items-center w-full'>
             <ul className='nav-text flex flex-col gap-5'>
-              <li><a href="">Home</a></li>
-              <li><a href="">About</a></li>
+              <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
               <li><a href="">Project</a></li>
             </ul>
           </div>

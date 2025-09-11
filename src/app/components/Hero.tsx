@@ -18,25 +18,26 @@ const Hero = () => {
   return (
     <>
     <div className='max-w-[2000px]'>
-        <div className='py-[15rem] w-full h-full relative flex flex-col justify-center'>
+        <div className='py-[10rem] md:py-[15rem] w-full h-full relative flex flex-col justify-center'>
             <div className='heading-text text-[90px] text-center relative z-10 md:text-[96px]'>
                 Web
             <br/>
             <span className='uppercase'>Developer</span>
             </div>
 
-            <div className='flex justify-center w-full absolute top-105 md:top-[42%]'>
+            <div className='flex justify-center w-full absolute top-87 md:top-[42%]'>
                 <Image
                 src="/laptop-3d.svg"
                 alt='Loptop img'
                 width={350}
                 height={350}
+                priority = {false}
                 className='rotate-20 z-15'
                 />
             </div>
 
             <div className='text-3xl pt-[220px] flex justify-center '>
-                <div className='rounded-bourder z-20'>
+                <div className='rounded-border z-20'>
                     <div className='text-xl font-red font-bold'>...</div>
                     <a href="/"
                     className='text-xl font-bold '>Let's Connect</a>

@@ -14,11 +14,11 @@ const Project = () => {
                 width={200}
                 height={200}
                 className='mx-auto'/>
-                <div className='center md:w-[60%]'>
-                    <div className='heading-text text-center'>Title</div>
+                <div className='center md:w-[60%] py-5'>
+                    <div className='heading-text text-center text-3xl'>Title</div>
                     <div className='text-white py-8 px-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate sunt possimus, eum itaque quo perspiciatis consectetur minima iure optio non est totam culpa blanditiis! Iure voluptatum ullam nesciunt ipsa omnis?</div>
 
-                    <div className='flex gap-4 w-fit rounded-bourder-black m-auto '>
+                    <div className='flex gap-4 w-fit rounded-border-black m-auto '>
                         <div>
                             <div className='font-red'>...</div>
                             <a href="/Project"  className='text-white font-bold'>View Projects</a>
