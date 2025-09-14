@@ -106,4 +106,14 @@ body {
   .field-input{
     @apply w-full bg-(--color-red) text-white placeholder:text-white placeholder:opacity-75 outline-none;
   }
+
+  .footer-bg-pink{
+    @apply bg-no-repeat bg-cover;
+    background-image: url("/footer-bg-pink.svg");
+  }
+  .footer-bg-white{
+    @apply bg-no-repeat bg-cover;
+    background-image: url("/footer-bg-white.svg");
+  }
+
 }

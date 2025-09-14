@@ -1,16 +1,53 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import React, { useRef } from 'react'
 import Project from './Project'
 import Button from './Button'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import TextPlugin from 'gsap/TextPlugin'
 
 const About = () => {
+    const cursorRef = useRef(null)
+
+    useGSAP(()=>{
+        gsap.set(cursorRef.current,{x:-10})
+        gsap.registerPlugin(TextPlugin,ScrollTrigger)
+
+        const sectionTl = gsap.timeline({
+            scrollTrigger:{
+                trigger:".about-section",
+                start:"top top",
+                end:"bottom center",
+                pin: true,
+            }
+        })
+        
+        sectionTl
+        .from('.cursor',{
+            autoAlpha: 0, 
+            duration:0.5,
+            repeat: -1,
+            ease:"step(1)"
+        })
+       .to(".typewriter-text", {
+        text: {value: "Passionate web developer with a love of math"}, 
+        opacity:1,
+        duration: 2, 
+        delay: 0, 
+        ease: "none"})
+    })
   return (
-    <div className='max-w-[2000px]'>
+    <div className='max-w-[2000px] about-section'>
         <div className='py-[5rem] center'>
             <h3 className='heading-text text-center text-6xl py-3'>Ayaka Miyazaki</h3>
-            <div className='text-center text-white pt-[4rem] pb-[3rem] px-[2rem] text-2xl'>
-                Hello, I'm a passionate and enthusiastic web develoer with a Bachelor's degree of mathematics.
+            <div className='pt-[4rem] pb-[3rem] mx-auto'>
+                <div className='center-text text-white text-2xl typewriter-text inline-block'>
+                </div>
+                <span className='cursor text-white text-2xl' ref={cursorRef}>|</span>
             </div>
+
 
         {/* Skills */}
             <div className='flex justify-center '>

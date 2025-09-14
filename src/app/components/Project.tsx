@@ -13,7 +13,7 @@ const Project = () => {
                 alt="placeholder image"
                 width={200}
                 height={200}
-                className='mx-auto'/>
+                className='mx-auto md:min-w-[280px]'/>
                 <div className='center md:w-[60%] py-5'>
                     <div className='heading-text text-center text-3xl'>Title</div>
                     <div className='text-white py-8 px-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptate sunt possimus, eum itaque quo perspiciatis consectetur minima iure optio non est totam culpa blanditiis! Iure voluptatum ullam nesciunt ipsa omnis?</div>

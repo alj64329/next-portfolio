@@ -18,8 +18,8 @@ const Hero = () => {
   return (
     <>
     <div className='max-w-[2000px]'>
-        <div className='py-[10rem] md:py-[15rem] w-full h-full relative flex flex-col justify-center'>
-            <div className='heading-text text-[90px] text-center relative z-10 md:text-[96px]'>
+        <div className='py-[10rem] w-full h-full relative flex flex-col justify-center'>
+            <div className='heading-text text-[90px] text-center relative z-10 md:text-[110px]'>
                 Web
             <br/>
             <span className='uppercase'>Developer</span>
@@ -37,7 +37,7 @@ const Hero = () => {
             </div>
 
             <div className='text-3xl pt-[220px] flex justify-center '>
-                <div className='rounded-border z-20'>
+                <div className='rounded-border z-22'>
                     <div className='text-xl font-red font-bold'>...</div>
                     <a href="/"
                     className='text-xl font-bold '>Let's Connect</a>
@@ -54,9 +54,9 @@ const Hero = () => {
             <Image 
             src="/blue-circle.svg"
             alt="blue string image"
-            width={500}
-            height={500}
-            className='opacity-50 absolute top-1/4 left-1/2 -translate-x-1/2 -z-10 object-cover hidden md:object-none md:block'
+            width={700}
+            height={700}
+            className='opacity-50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -z-10 object-cover hidden md:object-none md:block'
             />
             <Image 
             src="/blue-string.svg"

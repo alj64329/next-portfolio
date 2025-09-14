@@ -16,7 +16,7 @@ export default function Home() {
         <Project />
       </div>
       <Contact />
-      <Footer />
+      <Footer isDark={false}/>
     </>
 );
 }

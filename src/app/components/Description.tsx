@@ -1,9 +1,33 @@
+'use client'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import { ScrollTrigger } from 'gsap/all'
+import { ScrollToPlugin } from 'gsap/ScrollToPlugin'
 import Image from 'next/image'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const Description = () => {
+
+    useGSAP(()=>{
+        gsap.registerPlugin(ScrollTrigger)
+        
+        const tl1 = gsap.timeline({
+            scrollTrigger:{
+                trigger: '.descreption-sec',
+                scrub: 2,
+                start:'top top',
+                pin: true
+            }
+        })
+
+        tl1.from('.content div',{
+            y:'100vh',
+            opacity:0,
+            stagger: 2,
+        })
+    })
   return (
-    <div className='bg-[url(/bg-grey-wave.svg)] bg-cover py-[10rem] md:pt-[15rem]'>
+    <div className='bg-[url(/bg-grey-wave.svg)] bg-cover py-[10rem] md:pt-[15rem] descreption-sec'>
         <div className='flex flex-col md:flex-row px-[3rem] md:px-[5rem] gap-[2rem]'>
             <div className='flex flex-col'>
                 <Image
@@ -19,7 +43,7 @@ const Description = () => {
             </div>
 
             <div className='flex justify-center md:justify-start w-full'>
-                <div className='center gap-5 md:gap-[2rem] md:max-w-[900px] md:text-2xl'>
+                <div className='content center gap-5 md:gap-[2rem] md:max-w-[900px] md:text-2xl overflow-hidden'>
                     <div >
                         I’m a beginner web developer with a Bachelor’s degree in Mathematics 
                         and a love for turning ideas into working code
