@@ -43,8 +43,7 @@ const AboutHero = () => {
 
   return (
     <div className="max-w-[2000px] py-[5rem] hero-container overflow-hidden">
-    <div className='
-    bg-[url(/blue-vertical-strings.svg)] bg-contain bg-center bg-no-repeat'>
+    <div className='bg-string'>
         <div className='pt-[15rem] pb-[5rem] md:pt-[17rem] md:pb-[10rem] w-full h-full relative flex flex-col justify-center'>
             <div className='text-5xl px-[2.5rem] text-center relative z-10 md:text-[80px] about-text'>
                 Hello,

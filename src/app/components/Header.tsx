@@ -26,7 +26,7 @@ const Header = () => {
             <ul className='nav-text flex flex-col gap-5'>
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
-              <li><a href="">Project</a></li>
+              <li><a href="/projects">Projects</a></li>
             </ul>
           </div>
 

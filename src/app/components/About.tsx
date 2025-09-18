@@ -42,8 +42,8 @@ const About = () => {
     <div className='max-w-[2000px] about-section'>
         <div className='py-[5rem] center'>
             <h3 className='heading-text text-center text-6xl py-3'>Ayaka Miyazaki</h3>
-            <div className='pt-[4rem] pb-[3rem] mx-auto'>
-                <div className='center-text text-white text-2xl typewriter-text inline-block'>
+            <div className='pt-[4rem] pb-[3rem] mx-auto px-[2rem]'>
+                <div className='center-text text-center text-white text-2xl typewriter-text inline-block'>
                 </div>
                 <span className='cursor text-white text-2xl' ref={cursorRef}>|</span>
             </div>

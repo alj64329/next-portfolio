@@ -14,7 +14,7 @@ const Description = () => {
         const tl1 = gsap.timeline({
             scrollTrigger:{
                 trigger: '.descreption-sec',
-                scrub: 2,
+                scrub: true,
                 start:'top top',
                 pin: true
             }

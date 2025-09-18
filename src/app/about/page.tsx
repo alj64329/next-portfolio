@@ -1,3 +1,4 @@
+
 import { Metadata } from "next";
 import AboutHero from "../components/AboutHero";
 import Description from "../components/Description";

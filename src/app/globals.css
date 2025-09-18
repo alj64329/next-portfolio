@@ -116,4 +116,9 @@ body {
     background-image: url("/footer-bg-white.svg");
   }
 
+  .bg-string{
+    @apply bg-contain bg-center bg-no-repeat;
+    background-image: url("/blue-vertical-strings.svg");
+  }
+
 }

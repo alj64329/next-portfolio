@@ -1,7 +1,11 @@
 'use client';
 import { useEffect, useState } from 'react';
-import React from 'react'
+import React, { Suspense }  from 'react'
 import Image from 'next/image'
+import { Canvas } from '@react-three/fiber'
+import Laptop from './Laptop'
+import { PerspectiveCamera } from '@react-three/drei'
+import { useMediaQuery } from 'usehooks-ts';
 
 
 
@@ -10,36 +14,43 @@ const Hero = () => {
     useEffect(()=>{
             const element = document.querySelector('.heading-text')
             const rect = element?.getBoundingClientRect()
-    setPosition(rect?.bottom ?? null)
-
-    
+    setPosition(rect?.bottom ?? null) 
     },[])
+
+    const isMobile = useMediaQuery('(max-width: 768px)')
+
 
   return (
     <>
     <div className='max-w-[2000px]'>
-        <div className='py-[10rem] w-full h-full relative flex flex-col justify-center'>
-            <div className='heading-text text-[90px] text-center relative z-10 md:text-[110px]'>
+        <div className='pt-[5rem] pb-[15rem] w-full h-[100vh] flex flex-col justify-center'>
+            <div className='heading-text text-[90px] text-center z-10 md:text-[160px] leading-[0.9]'>
                 Web
             <br/>
             <span className='uppercase'>Developer</span>
             </div>
-
-            <div className='flex justify-center w-full absolute top-87 md:top-[42%]'>
-                <Image
-                src="/laptop-3d.svg"
-                alt='Loptop img'
-                width={350}
-                height={350}
-                priority = {false}
-                className='rotate-20 z-15'
-                />
+            <div  className="absolute w-full" style={{height:'100vh'}}>
+              <Canvas>
+              <PerspectiveCamera makeDefault position={[0,0,10]}/>
+              <Suspense fallback={null}>
+                  <Laptop
+                  position ={[0, isMobile?-2.5:-4, 0]}
+                  rotation={[0, 0, 0]}
+                  scale={isMobile?1.4:1.8}
+                  />
+                  <ambientLight intensity={1} />
+                  <directionalLight position={[10,10,10]} intensity={0.5} />
+              </Suspense>
+              </Canvas>
             </div>
 
-            <div className='text-3xl pt-[220px] flex justify-center '>
+            {/* <div className='flex justify-center w-full absolute top-87 md:top-[42%]'>
+            </div> */}
+
+            <div className='text-3xl pt-[1rem] flex justify-center absolute left-1/2 bottom-[170px] md:bottom-[50px]'>
                 <div className='rounded-border z-22'>
                     <div className='text-xl font-red font-bold'>...</div>
-                    <a href="/"
+                    <a href="#contact"
                     className='text-xl font-bold '>Let's Connect</a>
                 </div>
             </div>
