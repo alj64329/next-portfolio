@@ -1,7 +1,6 @@
 'use client'
 import Image from 'next/image'
 import React, { useRef } from 'react'
-import Project from './Project'
 import Button from './Button'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
