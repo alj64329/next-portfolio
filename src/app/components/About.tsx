@@ -59,6 +59,7 @@ const About = () => {
                 <div className='skill-container flex text-white p-8 gap-2 text-xl'>
                     <div>JavaScript</div>
                     <div>HTML</div>
+                    <div>CSS</div>
                 </div>
 
             </div>
