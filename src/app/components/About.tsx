@@ -59,6 +59,7 @@ const About = () => {
                     <div>JavaScript</div>
                     <div>HTML</div>
                     <div>CSS</div>
+                    <div>SQL</div>
                 </div>
 
             </div>
