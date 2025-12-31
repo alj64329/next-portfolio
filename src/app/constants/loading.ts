@@ -1,0 +1,22 @@
+export const loadingLines = [
+'$ npm run build',
+  '',
+  '> portfolio-Ayaka-Miyazaki@1.0.0 build',
+  '> next build',
+  '',
+  'info  - Loaded env from .env.local',
+  'warn  - Deprecated API usage detected',
+  'info  - Compiling modules...',
+  '',
+  '✓ JavaScript loaded',
+  '✓ HTML parsed',
+  '✓ CSS optimized',
+  '',
+  "error - Module not found: Can't resolve 'confidence'",
+  'retrying...',
+  '',
+  '✓ confidence module injected successfully',
+  '✓ Build completed',
+  '',
+  'Launching portfolio...'
+]

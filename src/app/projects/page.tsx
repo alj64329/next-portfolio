@@ -2,7 +2,7 @@
 import { Metadata } from "next";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
-import ProjectHero from "../components/ProjectHero";
+import ProjectHero from "../components/Projects/ProjectHero";
 
 
 export const metadata: Metadata = {

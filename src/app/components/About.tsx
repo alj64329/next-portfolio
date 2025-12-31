@@ -11,8 +11,8 @@ const About = () => {
     const cursorRef = useRef(null)
 
     useGSAP(()=>{
-        gsap.set(cursorRef.current,{x:-10})
         gsap.registerPlugin(TextPlugin,ScrollTrigger)
+        gsap.set(cursorRef.current,{x:-10})
 
         const sectionTl = gsap.timeline({
             scrollTrigger:{
@@ -38,7 +38,7 @@ const About = () => {
         ease: "none"})
     })
   return (
-    <div className='max-w-[2000px] about-section'>
+    <div className='max-w-[2000px] about-section h-screen'>
         <div className='py-[5rem] center'>
             <h3 className='heading-text text-center text-6xl py-3'>Ayaka Miyazaki</h3>
             <div className='pt-[4rem] pb-[3rem] mx-auto px-[2rem]'>

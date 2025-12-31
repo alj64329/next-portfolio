@@ -22,10 +22,10 @@ const Project = () => {
             </div>
             <div className="text-white py-8 px-5">{previewProject.context}</div>
 
-            <div className="flex gap-4 w-fit rounded-border-black m-auto ">
+            <div className="flex gap-4 w-fit rounded-border-black m-auto cursor-pointer">
               <div>
                 <div className="font-red">...</div>
-                <a href="/Project" className="text-white font-bold">
+                <a href={previewProject.url} className="text-white font-bold">
                   View Projects
                 </a>
               </div>

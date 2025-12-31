@@ -17,9 +17,11 @@ export default function RootLayout({
     <html lang="en">
       <body className="m-0">
         <div className="min-h-screen max-w-[2000px]">
-        <main>
+          <main>
+            <Header />
             {children}
-        </main>
+            <Footer isDark={true} />
+          </main>
         </div>
       </body>
     </html>

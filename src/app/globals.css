@@ -1,5 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Knewave&family=Sen:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Knewave&family=Sen:wght@400..800&display=swap");
 @import "tailwindcss";
+
+
+/* Loading */
+.cursor{
+  animation:blink 1s infinite;
+}
+
+@keyframes blink{
+  0%, 50%{opacity: 1;}
+  51%, 100%{opacity: 0;}
+}
+
+.invisible {
+  visibility: hidden;
+}
+
+.visible {
+  visibility: visible;
+}
 
 :root {
   /* Background color */
@@ -12,6 +31,7 @@
   /* Font-Family */
   --font-knewave: "Knewave", system-ui;
   --font-sen: "Sen", sans-serif;
+  --font-jetbrains:"JetBrains Mono", monospace;
 }
 
 @theme inline {
@@ -43,6 +63,7 @@
     background-color: white;
   }
 
+
 }
 
 body {
@@ -53,6 +74,11 @@ body {
 .heading-text{
     color: var(--color-red);
     font-family: var(--font-knewave)
+}
+
+.terminal-text{
+  font-family: var(--font-jetbrains);
+  color:white;
 }
 
 @layer utilities{
