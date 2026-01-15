@@ -12,8 +12,8 @@ type Props = {
 const WindowControlls = ({target}: Props) => {
     const {closeWindow} =useWindowStore()
   return (
-    <div className="flex w-full justify-end px-4 py-2">
-      <div className="flex gap-4">
+    <div className="flex w-full justify-end px-2 py-1 lg:px-4 lg:py-2 bg-[#373737]">
+      <div className="flex gap-4 text-[10px] md:text-sm">
         <FiMinus />
         <RiCloseLargeLine
         onClick={()=>closeWindow(target)}

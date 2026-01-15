@@ -1,7 +1,7 @@
 'use client'
 import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'
-import React from 'react'
+import React, { useEffect } from 'react'
 import WindowControlls from './WindowControlls'
 import { locations } from '@/app/constants'
 import WindowWrapper from '@/app/hoc/WindowWrapper'
@@ -23,9 +23,13 @@ const Finder = (props: Props) => {
 
         openWindow(`${item.fileType}${item.kind}`, item)
     }
+
+    useEffect(()=>{
+        console.log(activeLocation)
+    },[activeLocation])
   return (
-    <div id="finder"
-    className='h-[60%] '>
+    <div
+    className='h-[60%] finder'>
         <div className='window-header'>
             <WindowControlls target="finder"/>
         </div>
@@ -48,15 +52,15 @@ const Finder = (props: Props) => {
             </div>
 
 
-            <div>
-                <ul className='content'>
-                    {activeLocation?.children.map((item)=>(
+            <div className='w-full'>
+                <ul className='content h-full w-full'>
+                    {activeLocation?.children?.map((item)=>(
                     <li
                     key={item.id}
                     className={`${item.position} text-black`}
                     onClick={()=>openItem(item)}
                     >
-                        <p>
+                        <p className='text-black'>
                         {item.name}
                         </p>
                     </li>

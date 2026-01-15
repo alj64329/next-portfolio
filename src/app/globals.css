@@ -163,7 +163,11 @@ body {
     }
   }
 
-  #finder {
+  #finder{
+    @apply w-full h-full;
+  }
+
+  .finder {
     @apply absolute w-[55%] max-w-[550px] lg:w-2xl left-20 top-20 shadow-2xl drop-shadow-2xl overflow-hidden rounded-md;
 
     .sidebar {

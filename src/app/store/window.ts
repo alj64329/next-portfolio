@@ -29,6 +29,7 @@ const useWindowStore = create<WindowStore>()(
     nextZIndex: INITIAL_Z_INDEX+1,
     openWindow:(windowKey:WindowKey, data = null)=>
         set((state:StateType)=>{
+            console.log(windowKey)
             const win = state.windows[windowKey]
             if(!win) return
             win.isOpen = true

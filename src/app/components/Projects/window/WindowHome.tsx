@@ -13,10 +13,11 @@ type Props = {
 
 const projects = locations.work.children ?? []
 const WindowHome = ({boundsRef}: Props) => {
-    // const {setActiveLocation} = useLocationStore()
+    const {setActiveLocation} = useLocationStore()
     const {openWindow} = useWindowStore()
 
     const handleOpenProjectFinder = (project:any)=>{
+        setActiveLocation(project)
         openWindow(project)
         openWindow("finder")
     }
@@ -45,10 +46,6 @@ const WindowHome = ({boundsRef}: Props) => {
     }
     )
 
-    // useGSAP(()=>{
-    //     console.log(boundsRef.current)
-    //     Draggable.create(".folder")
-    // },[])
 
   return (
     <section id='window-home'>
@@ -59,7 +56,7 @@ const WindowHome = ({boundsRef}: Props) => {
                 onClick={()=>handleOpenProjectFinder(project)}>
                     <div className='flex flex-col w-fit p-2 items-center lg:p-3'>
                         <img src="/images/folder.png"
-                        className='w-[55px] lg:w-[65px]'
+                        className='w-[30px] md:w-[45px] lg:w-[65px]'
                         alt={project.name}/>
                         <p className='text-white text-shadow-lg/20 text-[12px] text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-20 o'>
                             {project.name}
