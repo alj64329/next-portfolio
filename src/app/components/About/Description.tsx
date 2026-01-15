@@ -7,24 +7,24 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 
 const Description = () => {
-  useGSAP(() => {
-    gsap.registerPlugin(ScrollTrigger);
+  // useGSAP(() => {
+  //   gsap.registerPlugin(ScrollTrigger);
 
-    const tl1 = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".descreption-sec",
-        scrub: true,
-        start: "top top",
-        pin: true,
-      },
-    });
+  //   const tl1 = gsap.timeline({
+  //     scrollTrigger: {
+  //       trigger: ".descreption-sec",
+  //       scrub: true,
+  //       start: "top top",
+  //       pin: true,
+  //     },
+  //   });
 
-    tl1.from(".content div", {
-      y: "100vh",
-      opacity: 0,
-      stagger: 2,
-    });
-  });
+  //   tl1.from(".content div", {
+  //     y: "100vh",
+  //     opacity: 0,
+  //     stagger: 2,
+  //   });
+  // });
   return (
     <div className="bg-[url(/bg-grey-wave.svg)] bg-cover py-[10rem] md:pt-[15rem] descreption-sec">
       <div className="flex flex-col md:flex-row px-[3rem] md:px-[5rem] gap-[2rem]">
@@ -44,22 +44,18 @@ const Description = () => {
         <div className="flex justify-center md:justify-start w-full">
           <div className="content center gap-5 md:gap-[2rem] md:max-w-[900px] md:text-2xl overflow-hidden">
             <div>
-              I’m a beginner web developer with a Bachelor’s degree in
-              Mathematics and a love for turning ideas into working code
+              I’m a Junior Web Developer with a Bachelor’s degree in Mathematics and hands-on experience building practical tools and web applications.
+              I enjoy turning ideas into working, user-friendly code.
             </div>
 
             <div>
-              I may not have official tech job experience yet, but I’ve built
-              practical tools —like project allocation apps and admin task
-              automations by JavaScript and Google Apps Script.
+              My experience includes creating internal automation tools and enterprise dashboards using JavaScript, Google Apps Script, and Ext JS. 
+              I’ve built project allocation apps, expense report generators, and vendor dashboards that streamline workflows and support real business operations.
             </div>
 
             <div>
-              I’m curious by nature, enjoy figuring out how things work, and
-              love solving problems, learning new things and making something
-              that’s both useful and user friendly. My goal is to bring fresh
-              ideas, problem-solving skills, and dedication to every project I
-              work on.
+              I am curious and enjoy solving problems, and love learning new technologies. 
+              My goal is to apply my problem-solving skills, creativity, and dedication to building applications that are both functional and user-friendly.
             </div>
           </div>
         </div>

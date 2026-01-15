@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { projects } from "../constants/projects";
+import Link from "next/link";
 
 const Project = () => {
   const previewProject = projects[0];
@@ -25,7 +26,9 @@ const Project = () => {
             <div className="flex gap-4 w-fit rounded-border-black m-auto cursor-pointer">
               <div>
                 <div className="font-red">...</div>
-                <a href={previewProject.url} className="text-white font-bold">
+                <a href={previewProject.url} 
+                className="text-white font-bold"
+                target="_blank">
                   View Projects
                 </a>
               </div>
@@ -46,9 +49,9 @@ const Project = () => {
 
       <div className="flex justify-center pt-[5rem]">
         <h3>
-          <a href="" className="text-white text-4xl underline">
+          <Link href="/projects" className="text-white text-4xl underline">
             All Project
-          </a>
+          </Link>
         </h3>
       </div>
     </div>
