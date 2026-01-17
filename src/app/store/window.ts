@@ -27,9 +27,8 @@ const useWindowStore = create<WindowStore>()(
     immer((set)=>({
     windows: WINDOW_CONFIG,
     nextZIndex: INITIAL_Z_INDEX+1,
-    openWindow:(windowKey:WindowKey, data = null)=>
+    openWindow:(windowKey:WindowKey, data)=>
         set((state:StateType)=>{
-            console.log(windowKey)
             const win = state.windows[windowKey]
             if(!win) return
             win.isOpen = true

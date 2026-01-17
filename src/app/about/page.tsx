@@ -1,11 +1,9 @@
 import { Metadata } from "next";
-
-import Footer from "../components/Footer";
-import Header from "../components/Header";
 import AboutHero from "../components/About/AboutHero";
 import Description from "../components/About/Description";
+import Footer from "../components/Footer";
+import Header from "../components/Header";
 import Skills from "../components/About/Skills";
-
 
 export const metadata: Metadata = {
   title: "Ayaka Miyazaki - About",

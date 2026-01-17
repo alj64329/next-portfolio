@@ -40,7 +40,7 @@ const Finder = (props: Props) => {
                 <ul>
                     {Object.values(locations).map((item)=>(
                     <li key={item.id} onClick={()=>setActiveLocation(item)}
-                    className={`${item.id === activeLocation.id?"active":"not-active"}`}>
+                    className={`${activeLocation&&item.id === activeLocation.id?"active":"not-active"}`}>
                         <item.icon className='text-[7px] lg:text-xs'
                         />
                         <p className='text-[5px] lg:text-[10px] font-medium truncate'>
@@ -60,7 +60,9 @@ const Finder = (props: Props) => {
                     className={`${item.position} text-black`}
                     onClick={()=>openItem(item)}
                     >
-                        <p className='text-black'>
+                        <img src={item.iconImg} alt={item.name}
+                        />
+                        <p className='text-black max-w-40'>
                         {item.name}
                         </p>
                     </li>

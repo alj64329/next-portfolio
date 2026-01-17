@@ -1,15 +1,12 @@
 'use client'
 import { navIcons } from '@/app/constants'
-import useWindowStore from '@/app/store/window'
 import dayjs from 'dayjs'
 import React from 'react'
 import { IoPartlySunnyOutline } from 'react-icons/io5'
-import { div } from 'three/tsl'
 
 type Props = {}
 
 const Navbar = (props: Props) => {
-    const {openWindow}= useWindowStore()
   return (
     <div 
     className='py-1 lg:py-2 px-4 bg-gray-700 flex justify-between items-center'>
@@ -24,7 +21,7 @@ const Navbar = (props: Props) => {
             ))}
 
 
-            <div className='flex flex-col text-[10px] lg:text-sm'>
+            <div className='flex flex-col text-[8px] lg:text-[12px]'>
                 <time>{dayjs().format("h:mm A")}</time>
                 <time>{dayjs().format("YYYY-MM-DD")}</time>
             </div>

@@ -5,46 +5,50 @@ import useWindowStore from '@/app/store/window'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
-import React, { useEffect, useRef } from 'react'
+import React, { useEffect, useRef, useState } from 'react'
 
 type Props = {
     boundsRef:React.RefObject<HTMLDivElement|null>
+    setFinderOpen:()=>void
 }
 
 const projects = locations.work.children ?? []
-const WindowHome = ({boundsRef}: Props) => {
+const WindowHome = ({boundsRef, setFinderOpen}: Props) => {
     const {setActiveLocation} = useLocationStore()
     const {openWindow} = useWindowStore()
+    const [isMounted, setIsMounted] = useState(false);
 
     const handleOpenProjectFinder = (project:any)=>{
+        setFinderOpen()
         setActiveLocation(project)
         openWindow(project)
         openWindow("finder")
     }
 
 
-    useGSAP(()=>{
+    useEffect(() => {
+        setIsMounted(true);
+    }, []);
+
+    useGSAP(() => {
         console.log(boundsRef.current)
+        if (!boundsRef.current) return;
 
-        if(!boundsRef.current) return
-
-        Draggable.create(".folder"
-            ,{
-            type:'x,y',
-            bounds:boundsRef.current,
-            inertia:true,
-            zIndexBoost:false,
-            onPress(){
-                gsap.set(this.target, {zIndex:50})
+        Draggable.create(".folder", {
+            type: 'x,y',
+            bounds: boundsRef.current,
+            inertia: true,
+            zIndexBoost: false,
+            onPress() {
+                gsap.set(this.target, { zIndex: 50 });
             }
-        }
-    )
+        });
     },
     {
-        scope:boundsRef,
-        dependencies:[]
+        scope: boundsRef,
+        dependencies: [isMounted]
     }
-    )
+    );
 
 
   return (
