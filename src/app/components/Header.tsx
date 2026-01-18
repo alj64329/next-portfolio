@@ -6,6 +6,23 @@ import React, { useState } from 'react'
 const Header = () => {
 
   const [isOpen, setIsOpen] = useState(false)
+  const menu=[
+    {
+      id:1,
+      href:"/",
+      name:"Home"
+    },
+    {
+      id:2,
+      href:"/about",
+      name:"About"
+    },
+    {
+      id:3,
+      href:"/projects",
+      name:"Projects"
+    },
+  ]
 
   const handleClick = ()=>{
     setIsOpen((prev)=>!prev)
@@ -21,13 +38,22 @@ const Header = () => {
         height={100}
         className='self-start cursor-pointer'
         /></Link>
-        {isOpen &&
+        {isOpen ?
         <div className='fixed md:static inset-0 top-right-md bg-myRed flex pl-[2rem] pb-[4rem] rounded-2xl w-full md:w-auto'>
           <div className='pt-[5rem] flex justify-center items-center w-full'>
             <ul className='nav-text flex flex-col gap-5'>
-              <li><Link href="/">Home</Link></li>
-              <li><Link href="/about">About</Link></li>
-              <li><Link href="/projects">Projects</Link></li>
+              {
+                menu.map(item=>(
+                  <li key={item.id}>
+                    <Link
+                    href ={item.href}
+                    onClick={handleClick}
+                    >
+                      {item.name}
+                    </Link>
+                  </li>
+                ))
+              }
             </ul>
           </div>
 
@@ -41,10 +67,7 @@ const Header = () => {
           className='-rotate-10 cursor-pointer'
           />
           </div>
-        </div>
-        }
-
-        {!isOpen&&
+        </div>:
         <Image 
         src="/menu-burger.svg"
         alt ="Burger Menu"
