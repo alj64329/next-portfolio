@@ -5,6 +5,8 @@ import React, { useEffect } from 'react'
 import WindowControlls from './WindowControlls'
 import { locations } from '@/app/constants'
 import WindowWrapper from '@/app/hoc/WindowWrapper'
+import { clImages } from '@/app/constants/cloudinary'
+import { CldImage } from 'next-cloudinary'
 
 type Props = {}
 
@@ -60,7 +62,11 @@ const Finder = (props: Props) => {
                     className={`${item.position} text-black`}
                     onClick={()=>openItem(item)}
                     >
-                        <img src={item.iconImg} alt={item.name}
+                        <CldImage
+                        width={64}
+                        height={64} 
+                        src={item.iconImg} 
+                        alt={item.name}
                         />
                         <p className='text-black max-w-40'>
                         {item.name}

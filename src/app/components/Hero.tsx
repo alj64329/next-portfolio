@@ -6,6 +6,8 @@ import { Canvas } from "@react-three/fiber";
 import Laptop from "./Laptop";
 import { PerspectiveCamera } from "@react-three/drei";
 import { useMediaQuery } from "usehooks-ts";
+import { CldImage } from "next-cloudinary";
+import { clImages } from "../constants/cloudinary";
 
 const Hero = () => {
   const [position, setPosition] = useState<number | null>(null);
@@ -53,25 +55,25 @@ const Hero = () => {
             </div>
           </div>
 
-          <Image
-            src="/blue-circle.svg"
+          <CldImage
+            src={clImages.blueCircle}
             alt="blue string image"
             fill
             className="opacity-25 absolute top-[2rem] -z-10 object-cover md:hidden"
           />
           {/* Medium to Large screen */}
-          <Image
-            src="/blue-circle.svg"
+          <CldImage
+            src={clImages.blueCircle}
             alt="blue string image"
-            width={700}
-            height={700}
+            width={600}
+            height={600}
             className="opacity-50 absolute top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 -z-10 object-cover hidden md:object-none md:block"
           />
-          <Image
-            src="/blue-string.svg"
+          <CldImage
+            src="blue-string_sjlrid"
             alt="blue string image"
             fill
-            className="opacity-50 absolute top-0 z-20 object-cover hidden md:block"
+            className="opacity-50 absolute top-0 z-20 object-cover hidden md:block max-w-[2000px] mx-auto"
           />
         </div>
       </div>

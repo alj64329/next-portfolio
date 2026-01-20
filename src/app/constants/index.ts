@@ -4,6 +4,7 @@ import { CiSearch } from "react-icons/ci";
 import { HiOutlineSpeakerWave } from "react-icons/hi2";
 import { IoBatteryHalfOutline } from "react-icons/io5";
 import { IoFolderOutline } from "react-icons/io5";
+import { BsFillBarChartFill } from "react-icons/bs";
 export interface NavLinkType {
     id: number,
     name:string,
@@ -57,6 +58,20 @@ const navIcons:NavIconType[] = [
     icon: IoBatteryHalfOutline,
   },
 ];
+const phoneNavIcons:NavIconType[] = [
+  {
+    id:1,
+    icon:BsFillBarChartFill
+  },
+  {
+    id: 2,
+    icon:FaWifi,
+  },
+  {
+    id: 3,
+    icon: IoBatteryHalfOutline,
+  },
+];
 
 const techStack:TechStackType[]= [
   {
@@ -89,6 +104,7 @@ const techStack:TechStackType[]= [
 export {
   navLinks,
   navIcons,
+  phoneNavIcons,
   techStack,
 };
 
@@ -112,7 +128,7 @@ const WORK_LOCATION = {
     {
       id: 5,
       name: "MovieMatch",
-      iconImg: "/images/folder.png",
+      iconImg: "folder_tmrxui",
       kind: "folder",
       position: "top-10 left-5", // icon position inside Finder
       windowPosition: "top-[10vh] left-4", // optional: Finder window position
@@ -121,7 +137,7 @@ const WORK_LOCATION = {
           id: 1,
           name: "MovieMatch Project.txt",
           subtitle:"MovieMatch",
-          iconImg: "/images/txt.png",
+          iconImg: "txt_wq1pxh",
           kind: "file",
           fileType: "txt",
           position: "top-[5%] right-[50%]",
@@ -135,7 +151,7 @@ const WORK_LOCATION = {
         {
           id: 2,
           name: "MovieMatch",
-          iconImg: "/images/website.png",
+          iconImg: "website_jqzara",
           kind: "file",
           fileType: "url",
           href: "https://react-movie-app-sooty-three.vercel.app",

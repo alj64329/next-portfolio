@@ -1,4 +1,5 @@
 'use client'
+import Link from 'next/link';
 import React from 'react'
 
 // Prop, 
@@ -12,9 +13,9 @@ const Footer = ({isDark}:FooterProps) => {
         <footer className={isDark?'footer-bg-white py-5':'footer-bg-pink py-5'}>
           <div className='p-5 md:py-3 flex justify-end text-2xl z-5'>
               <ul>
-                  <li><a href="/">Home</a></li>
-                  <li><a href="/about">About</a></li>
-                  <li><a href="">Project</a></li>
+                  <li><Link href="/">Home</Link></li>
+                  <li><Link href="/about">About</Link></li>
+                  <li><Link href="/projects">Project</Link></li>
               </ul>
           </div>
 

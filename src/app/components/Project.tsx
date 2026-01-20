@@ -2,6 +2,8 @@ import Image from "next/image";
 import React from "react";
 import { projects } from "../constants/projects";
 import Link from "next/link";
+import { CldImage } from "next-cloudinary";
+import { clImages } from "../constants/cloudinary";
 
 const Project = () => {
   const previewProject = projects[0];
@@ -10,15 +12,15 @@ const Project = () => {
     <div className="p-[2rem] md:p-[5rem] relative">
       <div className=" relative center z-0">
         <div className="relative project-card z-10 bg-black project-card-md">
-          <Image
-            src={previewProject.imgUrl}
+          <CldImage
+            src={clImages.projectPreview}
             alt="placeholder image"
             width={200}
             height={200}
             className="mx-auto md:min-w-[250px] rounded-xl"
           />
           <div className="center md:w-[60%] py-5">
-            <div className="heading-text text-center text-3xl">
+            <div className="heading-text text-center text-3xl lg:text-5xl">
               {previewProject.projectName}
             </div>
             <div className="text-white py-8 px-5">{previewProject.context}</div>

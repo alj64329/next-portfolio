@@ -1,7 +1,9 @@
 'use client'
+import { CldImage } from 'next-cloudinary'
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useState } from 'react'
+import { clImages, cloudinaryBase } from '../constants/cloudinary'
 
 const Header = () => {
 
@@ -31,8 +33,9 @@ const Header = () => {
   return (
     <div className='max-w-[2000px]'>
     <header className='w-full fixed bg-transparent p-5 flex flex-row justify-between z-25 max-w-[2000px]'>
-        <Link href="/"><Image 
-        src="/logo_name.svg"
+        <Link href="/">
+        <CldImage 
+        src={`${cloudinaryBase}/logo_rcidjw.png`}
         alt="Logo"
         width={100}
         height={100}
@@ -58,8 +61,8 @@ const Header = () => {
           </div>
 
           <div>
-          <Image
-          src='/close-icon.svg'
+          <CldImage
+          src={clImages.closeIcon}
           alt='Close icon'
           width={150}
           height={150}
@@ -68,8 +71,8 @@ const Header = () => {
           />
           </div>
         </div>:
-        <Image 
-        src="/menu-burger.svg"
+        <CldImage 
+        src={clImages.openIcon}
         alt ="Burger Menu"
         width={100}
         height={100}

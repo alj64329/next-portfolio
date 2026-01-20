@@ -1,10 +1,12 @@
 'use client'
 import { locations } from '@/app/constants'
+import { clImages } from '@/app/constants/cloudinary'
 import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { Draggable } from 'gsap/Draggable'
+import { CldImage } from 'next-cloudinary'
 import React, { useEffect, useRef, useState } from 'react'
 
 type Props = {
@@ -59,7 +61,10 @@ const WindowHome = ({boundsRef, setFinderOpen}: Props) => {
                 className={`group folder absolute ${project.windowPosition?project.windowPosition:""}`}
                 onClick={()=>handleOpenProjectFinder(project)}>
                     <div className='flex flex-col w-fit p-2 items-center lg:p-3'>
-                        <img src="/images/folder.png"
+                        <CldImage 
+                        src={clImages.folder}
+                        width={30}
+                        height={40}
                         className='w-[30px] md:w-[45px] lg:w-[65px]'
                         alt={project.name}/>
                         <p className='text-white text-shadow-lg/20 text-[12px] text-center px-1 rounded-md group-hover:bg-blue-500 transition-colors max-w-20 o'>

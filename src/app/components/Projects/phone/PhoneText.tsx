@@ -1,14 +1,12 @@
-import useWindowStore from "@/app/store/window"
-import WindowControlls from "./WindowControlls"
-import { TxtType } from "@/app/constants"
-import WindowWrapper from "@/app/hoc/WindowWrapper"
-import { useEffect, useState } from "react"
-import useLocationStore from "@/app/store/locations"
-
+import { TxtType } from '@/app/constants'
+import useLocationStore from '@/app/store/locations'
+import useWindowStore from '@/app/store/window'
+import React, { useEffect, useState } from 'react'
+import WindowControlls from '../window/WindowControlls'
 
 type Props = {}
 
-const Text = (props: Props) => {
+const PhoneText = (props: Props) => {
     const {windows} = useWindowStore()
     const {activeLocation, setActiveLocation} = useLocationStore()
     const [data, setData] =useState<TxtType>({
@@ -21,18 +19,16 @@ const Text = (props: Props) => {
     useEffect(()=>{
     const children = activeLocation.children
     const txt = children.find(item => item.fileType === "txt")?? null
+    console.log(txt)
 
     if(!txt) return
 
     setData(txt)
     },[])
   return (
-    <div className="h-[20%]">
-        <div className='window-header'>
-            <WindowControlls target="txtfile"/>
-        </div>
-
-        <div className="p-5 space-y-6 bg-white">
+    <div 
+    className="absolute z-20 top-[5%] h-full">
+        <div className="p-5 space-y-6 bg-white h-full">
             {data.image &&(
                 <div className="w-full">
                     <img src={data.image} alt={data.name}
@@ -41,12 +37,12 @@ const Text = (props: Props) => {
             )}
 
             {data.subtitle&&
-            <h3 className="space-y-5 leading-relaxed text-base text-gray-800">
+            <h3 className="space-y-5 leading-relaxed text-md text-center text-gray-800">
                 {data.subtitle}
             </h3>}
 
             {(data.description&& data.description.length>0)&&(
-                <div className="space-y-3 leading-relaxed text-base text-gray-800">
+                <div className="space-y-3 leading-relaxed text-[12px] text-gray-800">
                     {data.description.map((p,i)=>(
                         <p key={i}>
                             {p}
@@ -60,5 +56,4 @@ const Text = (props: Props) => {
   )
 }
 
-const TextWindow = WindowWrapper(Text, 'txtfile')
-export default TextWindow
+export default PhoneText

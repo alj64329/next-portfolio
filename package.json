@@ -21,6 +21,7 @@
     "leva": "^0.10.0",
     "leve": "^1.2.1",
     "next": "15.5.2",
+    "next-cloudinary": "^6.17.5",
     "react": "19.1.0",
     "react-dom": "19.1.0",
     "react-icon": "^1.0.0",
