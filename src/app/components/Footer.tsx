@@ -12,7 +12,8 @@ const Footer = ({isDark}:FooterProps) => {
     <div className='max-w-[2000px]'>
         <footer className={isDark?'footer-bg-white py-5':'footer-bg-pink py-5'}>
           <div className='p-5 md:py-3 flex justify-end text-2xl z-5'>
-              <ul>
+              <ul
+              className={`${isDark&&"text-white"}`}>
                   <li><Link href="/">Home</Link></li>
                   <li><Link href="/about">About</Link></li>
                   <li><Link href="/projects">Project</Link></li>

@@ -16,7 +16,6 @@ export default function About() {
       <div className="bg-black text-white">
         <AboutHero />
         <Description />
-        <Skills />
       </div>
     </>
   );

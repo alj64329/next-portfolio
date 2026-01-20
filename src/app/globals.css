@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Knewave&family=Sen:wght@400..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&family=Knewave&family=Sen:wght@400..800&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
 
 
@@ -32,6 +32,7 @@
   --font-knewave: "Knewave", system-ui;
   --font-sen: "Sen", sans-serif;
   --font-jetbrains:"JetBrains Mono", monospace;
+  --font-sourceCode:"Source Code Pro", monospace;
 }
 
 @theme inline {
@@ -39,6 +40,7 @@
   --color-foreground: var(--foreground);
   --font-knewave: var(--font-knewave);
   --font-sen: var(--font-sen);
+  --font-sourceCode:var(--font-sourceCode);
 }
 
 @media (prefers-color-scheme: light) {
@@ -138,7 +140,7 @@ body {
     background-image: url("/footer-bg-pink.svg");
   }
   .footer-bg-white{
-    @apply bg-no-repeat bg-cover;
+    @apply bg-no-repeat bg-cover bg-black;
     background-image: url("/footer-bg-white.svg");
   }
 

@@ -34,15 +34,16 @@ const Header = () => {
     <div className='max-w-[2000px] w-full'>
       <header className='fixed z-25 top-0 w-full'>
         <div
-        className='max-w-[2000px] w-full p-5 flex items-center justify-between'>
+        className={`max-w-[2000px] w-full p-5 flex ${!isOpen&&"items-center"} justify-between`}>
           <Link href="/">
-          <CldImage 
-          src={`${cloudinaryBase}/logo_rcidjw.png`}
-          alt="Logo"
-          width={100}
-          height={100}
-          className='self-start cursor-pointer'
-          /></Link>
+            <CldImage 
+            src={`${cloudinaryBase}/logo_rcidjw.png`}
+            alt="Logo"
+            width={100}
+            height={100}
+            className='self-start cursor-pointer'
+            />
+          </Link>
           {isOpen ?
           <div className='fixed md:static inset-0 top-right-md bg-myRed flex pl-[2rem] pb-[4rem] rounded-2xl w-full md:w-auto'>
             <div className='pt-[5rem] flex justify-center items-center w-full'>

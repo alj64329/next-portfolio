@@ -5,25 +5,14 @@ import { ScrollTrigger } from "gsap/all";
 import { ScrollToPlugin } from "gsap/ScrollToPlugin";
 import Image from "next/image";
 import React, { useEffect } from "react";
+import CodePlayGround from "./codePlayground/CodePlayGround";
 
 const Description = () => {
   return (
     <div className="bg-[url(/bg-grey-wave.svg)] bg-cover py-[10rem] md:pt-[15rem] descreption-sec">
       <div className="flex flex-col md:flex-row px-[3rem] md:px-[5rem] gap-[2rem]">
-        <div className="flex flex-col">
-          <Image
-            src="/pixeltrue-web-development.svg"
-            alt="Programmer image"
-            width={500}
-            height={500}
-            className="self-center hidden md:block min-w-[500px]"
-          />
-          <div className="self-center text-sm">
-            Illustration by Pixeltrue Ouch!
-          </div>
-        </div>
 
-        <div className="flex justify-center md:justify-start w-full">
+        <div className="flex justify-center hidden w-full">
           <div className="content center gap-5 md:gap-[2rem] md:max-w-[900px] md:text-2xl overflow-hidden">
             <div>
               I’m a Junior Web Developer with a Bachelor’s degree in Mathematics and hands-on experience building practical tools and web applications.
@@ -45,7 +34,7 @@ const Description = () => {
 
       {/* code playground section */}
       <div>
-        
+        <CodePlayGround/>
       </div>
     </div>
   );
