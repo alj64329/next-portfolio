@@ -31,56 +31,58 @@ const Header = () => {
   }
 
   return (
-    <div className='max-w-[2000px]'>
-    <header className='w-full fixed bg-transparent p-5 flex flex-row justify-between z-25 max-w-[2000px]'>
-        <Link href="/">
-        <CldImage 
-        src={`${cloudinaryBase}/logo_rcidjw.png`}
-        alt="Logo"
-        width={100}
-        height={100}
-        className='self-start cursor-pointer'
-        /></Link>
-        {isOpen ?
-        <div className='fixed md:static inset-0 top-right-md bg-myRed flex pl-[2rem] pb-[4rem] rounded-2xl w-full md:w-auto'>
-          <div className='pt-[5rem] flex justify-center items-center w-full'>
-            <ul className='nav-text flex flex-col gap-5'>
-              {
-                menu.map(item=>(
-                  <li key={item.id}>
-                    <Link
-                    href ={item.href}
-                    onClick={handleClick}
-                    >
-                      {item.name}
-                    </Link>
-                  </li>
-                ))
-              }
-            </ul>
-          </div>
+    <div className='max-w-[2000px] w-full'>
+      <header className='fixed z-25 top-0 w-full'>
+        <div
+        className='max-w-[2000px] w-full p-5 flex items-center justify-between'>
+          <Link href="/">
+          <CldImage 
+          src={`${cloudinaryBase}/logo_rcidjw.png`}
+          alt="Logo"
+          width={100}
+          height={100}
+          className='self-start cursor-pointer'
+          /></Link>
+          {isOpen ?
+          <div className='fixed md:static inset-0 top-right-md bg-myRed flex pl-[2rem] pb-[4rem] rounded-2xl w-full md:w-auto'>
+            <div className='pt-[5rem] flex justify-center items-center w-full'>
+              <ul className='nav-text flex flex-col gap-5'>
+                {
+                  menu.map(item=>(
+                    <li key={item.id}>
+                      <Link
+                      href ={item.href}
+                      onClick={handleClick}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))
+                }
+              </ul>
+            </div>
 
-          <div>
-          <CldImage
-          src={clImages.closeIcon}
-          alt='Close icon'
-          width={150}
-          height={150}
+            <div>
+            <CldImage
+            src={clImages.closeIcon}
+            alt='Close icon'
+            width={150}
+            height={150}
+            onClick={handleClick}
+            className='-rotate-10 cursor-pointer'
+            />
+            </div>
+          </div>:
+          <CldImage 
+          src={clImages.openIcon}
+          alt ="Burger Menu"
+          width={100}
+          height={100}
           onClick={handleClick}
-          className='-rotate-10 cursor-pointer'
-          />
-          </div>
-        </div>:
-        <CldImage 
-        src={clImages.openIcon}
-        alt ="Burger Menu"
-        width={100}
-        height={100}
-        onClick={handleClick}
-        className='hamburger-menu cursor-pointer'/>
-        }
-
-    </header>
+          className='hamburger-menu cursor-pointer'/>
+          }
+        </div>
+      </header>
     </div>
   )
 }

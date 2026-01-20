@@ -7,24 +7,6 @@ import Image from "next/image";
 import React, { useEffect } from "react";
 
 const Description = () => {
-  // useGSAP(() => {
-  //   gsap.registerPlugin(ScrollTrigger);
-
-  //   const tl1 = gsap.timeline({
-  //     scrollTrigger: {
-  //       trigger: ".descreption-sec",
-  //       scrub: true,
-  //       start: "top top",
-  //       pin: true,
-  //     },
-  //   });
-
-  //   tl1.from(".content div", {
-  //     y: "100vh",
-  //     opacity: 0,
-  //     stagger: 2,
-  //   });
-  // });
   return (
     <div className="bg-[url(/bg-grey-wave.svg)] bg-cover py-[10rem] md:pt-[15rem] descreption-sec">
       <div className="flex flex-col md:flex-row px-[3rem] md:px-[5rem] gap-[2rem]">
@@ -34,7 +16,7 @@ const Description = () => {
             alt="Programmer image"
             width={500}
             height={500}
-            className="self-center min-w-[500px]"
+            className="self-center hidden md:block min-w-[500px]"
           />
           <div className="self-center text-sm">
             Illustration by Pixeltrue Ouch!
@@ -59,6 +41,11 @@ const Description = () => {
             </div>
           </div>
         </div>
+      </div>
+
+      {/* code playground section */}
+      <div>
+        
       </div>
     </div>
   );
