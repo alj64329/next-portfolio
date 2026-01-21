@@ -17,9 +17,12 @@ const Script = (props: Props) => {
             </span>
 
             <button
-            className='bg-green-500 text-white py-1 px-5 rounded-lg'>
+            className='bg-green-500 text-white py-0.5 px-5 rounded-lg'>
                 Run
             </button>
+        </div>
+        {/* Tab */}
+        <div>
         </div>
 
         <div>

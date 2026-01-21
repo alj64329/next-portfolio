@@ -50,10 +50,11 @@ const Header = () => {
               <ul className='nav-text flex flex-col gap-5'>
                 {
                   menu.map(item=>(
-                    <li key={item.id}>
+                    <li 
+                    key={item.id}
+                    onClick={handleClick}>
                       <Link
                       href ={item.href}
-                      onClick={handleClick}
                       >
                         {item.name}
                       </Link>

@@ -1,7 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 import React, { Suspense } from "react";
-import Image from "next/image";
 import { Canvas } from "@react-three/fiber";
 import Laptop from "./Laptop";
 import { PerspectiveCamera } from "@react-three/drei";
@@ -11,6 +10,8 @@ import { clImages } from "../constants/cloudinary";
 
 const Hero = () => {
   const [position, setPosition] = useState<number | null>(null);
+
+  
   useEffect(() => {
     const element = document.querySelector(".heading-text");
     const rect = element?.getBoundingClientRect();

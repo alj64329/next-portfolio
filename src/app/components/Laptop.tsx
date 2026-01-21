@@ -2,7 +2,6 @@
 import React, { useRef, useState } from 'react'
 import { Float, useGLTF, useTexture } from '@react-three/drei'
 
-
 const Laptop =(props)=> {
   const { nodes, materials } = useGLTF('/models/laptop.glb')
 
@@ -24,7 +23,7 @@ const Laptop =(props)=> {
             geometry={nodes.Object_34.geometry}
             material={materials.Black_Dark}
           >
-          <meshMatcapMaterial map ={screenTexture}/>
+          <meshStandardMaterial  map ={screenTexture}/>
           </mesh>
         </group>
         <mesh
