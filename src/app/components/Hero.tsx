@@ -7,15 +7,18 @@ import { PerspectiveCamera } from "@react-three/drei";
 import { useMediaQuery } from "usehooks-ts";
 import { CldImage } from "next-cloudinary";
 import { clImages } from "../constants/cloudinary";
+import Image from "next/image";
 
 const Hero = () => {
   const [position, setPosition] = useState<number | null>(null);
+  const [showCanvas, setShowCanvas] = useState(false)
 
   
   useEffect(() => {
-    const element = document.querySelector(".heading-text");
-    const rect = element?.getBoundingClientRect();
-    setPosition(rect?.bottom ?? null);
+    // const element = document.querySelector(".heading-text");
+    // const rect = element?.getBoundingClientRect();
+    // setPosition(rect?.bottom ?? null);
+    setShowCanvas(true)
   }, []);
 
   const isMobile = useMediaQuery("(max-width: 768px)");
@@ -30,7 +33,7 @@ const Hero = () => {
             <span className="uppercase">Developer</span>
           </div>
           <div className="absolute w-full" style={{ height: "100vh" }}>
-            <Canvas>
+            {showCanvas&&<Canvas>
               <PerspectiveCamera makeDefault position={[0, 0, 10]} />
               <Suspense fallback={null}>
                 <Laptop
@@ -41,7 +44,7 @@ const Hero = () => {
                 <ambientLight intensity={1} />
                 <directionalLight position={[10, 10, 10]} intensity={0.5} />
               </Suspense>
-            </Canvas>
+            </Canvas>}
           </div>
 
           {/* <div className='flex justify-center w-full absolute top-87 md:top-[42%]'>
@@ -56,15 +59,15 @@ const Hero = () => {
             </div>
           </div>
 
-          <CldImage
-            src={clImages.blueCircle}
+          <Image
+            src="images/blue-circle.svg"
             alt="blue string image"
             fill
             className="opacity-25 absolute top-[2rem] -z-10 object-cover md:hidden"
           />
           {/* Medium to Large screen */}
-          <CldImage
-            src={clImages.blueCircle}
+          <Image
+            src="images/blue-circle.svg"
             alt="blue string image"
             width={600}
             height={600}

@@ -1,9 +1,12 @@
 import { MdArrowForwardIos } from "react-icons/md";
 import React from 'react'
+import { FnType } from "@/app/constants/codeplayground";
 
-type Props = {}
+type Props = {
+    outputFile:FnType
+}
 
-const Preview = (props: Props) => {
+const Preview = ({outputFile}: Props) => {
     const path ="C:\\Ayaka_Miyazaki\\About"
 
 
@@ -18,8 +21,14 @@ const Preview = (props: Props) => {
             </span>
         </div>
 
-        <div>
+        <div
+        className="py-2 px-4">
             <div className='min-h-[250px] m-3 font-sourceCode text-sm'> 
+                {outputFile.output.map((line, index)=>(
+                    <div key={index}>
+
+                    </div>
+                ))}
             </div>
         </div>
 

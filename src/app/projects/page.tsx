@@ -1,6 +1,5 @@
 
 import { Metadata } from "next";
-import Header from "../components/Header";
 import ProjectWindow from "../components/Projects/ProjectWindow";
 import ProjectMobile from "../components/Projects/ProjectHero";
 import ProjectHero from "../components/Projects/ProjectHero";
@@ -17,7 +16,6 @@ export default function Projects() {
   return (
     <>
     <div className="text-white h-full">
-      <Header />
       <ProjectHero />
 
       <div className="py-12 md:hidden">
