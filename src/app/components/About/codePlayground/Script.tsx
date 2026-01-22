@@ -36,7 +36,7 @@ const Script = ({handleExcusion}: Props) => {
         <div className='grid grid-cols-3 md:grid-cols-5 text-sm'>
             {files.map(tab =>(
                 <button
-                key={tab.id}
+                key={`tab-${tab.id}`}
                 onClick={()=>setActiveTab(tab.id as TabId)}
                 className={`tab ${activeTab === tab.id ? "border-b-0 border-t-2 border-t-[#0078D4]" : ""} p-2 border border-[#2B2b2b] text-start cursor-pointer`}>
                     {tab.fileName}

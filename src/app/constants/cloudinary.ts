@@ -8,8 +8,8 @@ export const clImages ={
     openIcon:'menu_dqr3om',
     logo:'logo_rcidjw',
     folderIcon:'folder_mloqba',
-    projectPreview:'project1-img_mrrsti',
+    projectPreview:'project1-img_swxvkn',
     blueString:'blue-string_sjlrid',
     blueCircle:'blue-circle_x0tmua',
-    phoneWallpaper:'moon_k5eegz'
+    phoneWallpaper:'sky_xn16lj'
 }

@@ -57,7 +57,7 @@ const ProjectPhone = (props: Props) => {
             src={clImages.phoneWallpaper}
             alt="Wallpaper moon"
             fill
-            className='w-full h-full'
+            className={`w-full h-full ${isOn&&"blur-sm"}`}
             />}
 
             {isOn?

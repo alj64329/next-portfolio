@@ -10,28 +10,6 @@ import CodePlayGround from "./codePlayground/CodePlayGround";
 const Description = () => {
   return (
     <div className="bg-[url(/bg-grey-wave.svg)] bg-cover py-[10rem] md:pt-[15rem] descreption-sec">
-      <div className="flex flex-col md:flex-row px-[3rem] md:px-[5rem] gap-[2rem]">
-
-        <div className="flex justify-center hidden w-full">
-          <div className="content center gap-5 md:gap-[2rem] md:max-w-[900px] md:text-2xl overflow-hidden">
-            <div>
-              I’m a Junior Web Developer with a Bachelor’s degree in Mathematics and hands-on experience building practical tools and web applications.
-              I enjoy turning ideas into working, user-friendly code.
-            </div>
-
-            <div>
-              My experience includes creating internal automation tools and enterprise dashboards using JavaScript, Google Apps Script, and Ext JS. 
-              I’ve built project allocation apps, expense report generators, and vendor dashboards that streamline workflows and support real business operations.
-            </div>
-
-            <div>
-              I am curious and enjoy solving problems, and love learning new technologies. 
-              My goal is to apply my problem-solving skills, creativity, and dedication to building applications that are both functional and user-friendly.
-            </div>
-          </div>
-        </div>
-      </div>
-
       {/* code playground section */}
       <div>
         <CodePlayGround/>

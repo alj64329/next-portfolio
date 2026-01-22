@@ -17,7 +17,7 @@ const Project = () => {
             alt="placeholder image"
             width={200}
             height={200}
-            className="mx-auto md:min-w-[250px] rounded-xl"
+            className="mx-auto md:min-w-[250px] aspect-square rounded-xl"
           />
           <div className="center md:w-[60%] py-5">
             <div className="heading-text text-center text-3xl lg:text-5xl">

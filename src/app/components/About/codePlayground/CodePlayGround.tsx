@@ -8,6 +8,7 @@ type Props = {}
 
 const CodePlayGround = (props: Props) => {
     const [activeFile, setActiveTab] = useState<FnType>(files[0])
+    const [isExcuted, setIsExcuted] = useState<boolean>(false)
 
     const handleExcusion =(tabId:string)=>{
 
@@ -19,13 +20,14 @@ const CodePlayGround = (props: Props) => {
       }
 
       setActiveTab(active)
+      setIsExcuted(true)
     }
 
 
   return (
     <div className='flex flex-col lg:flex-row w-[90%] max-w-[1200px] mx-auto gap-3'>
         <Script handleExcusion={handleExcusion}/>
-        <Preview outputFile={activeFile}/>
+        <Preview outputFile={activeFile} isShow={isExcuted} />
     </div>
   )
 }
