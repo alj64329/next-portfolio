@@ -7,11 +7,13 @@ import LockScreen from './phone/LockScreen'
 import PhoneFinder from './phone/PhoneFinder'
 import HomeScreen from './phone/HomeScreen'
 import PhoneText from './phone/PhoneText'
+import useWindowStore from '@/app/store/window'
 
-type Props = {}
 
-const ProjectPhone = (props: Props) => {
+
+const ProjectPhone = () => {
       const containerRef = useRef<HTMLDivElement>(null)
+      const {closeWindow} =useWindowStore()
       const [isOn, setIsOn]= useState(false)
       const [isFinderOpen, setIsFinderOpen]= useState(false)
       const [isTextOpen, setIsTextOpen]= useState(false)
@@ -19,6 +21,7 @@ const ProjectPhone = (props: Props) => {
       const handleOn =()=>{
         if(isTextOpen){
           setIsTextOpen(prev=>!prev)
+          closeWindow("txtfile")
           return
         }
         if(!isOn){
@@ -27,6 +30,7 @@ const ProjectPhone = (props: Props) => {
         }
         if(isFinderOpen){
         setIsFinderOpen(prev=>!prev)
+        closeWindow("finder")
         }
       }
 
@@ -69,7 +73,7 @@ const ProjectPhone = (props: Props) => {
 
         <div 
         className='cursor-pointer w-10 h-10 rounded-[50%] inset-shadow-sm inset-shadow-gray-400/50 absolute bottom-1 left-[50%] -translate-x-[50%]'
-        onClick={handleOn}>
+        onClick={()=>handleOn()}>
         </div>
       </div>
       </div>

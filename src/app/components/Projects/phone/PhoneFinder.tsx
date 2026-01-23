@@ -1,4 +1,4 @@
-import { locations } from '@/app/constants'
+import { ChildType, GrandChildType, locations } from '@/app/constants'
 import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'
 import { CldImage } from 'next-cloudinary'
@@ -13,8 +13,8 @@ const PhoneFinder = ({handleTxtOpen}: Props) => {
     const {openWindow} = useWindowStore()
     const {activeLocation, setActiveLocation} = useLocationStore()
 
-    const openItem =(item:any)=>{
-        
+    const openItem =(item:GrandChildType)=>{
+
         if(item.fileType === 'pdf') return openWindow('resume')
 
         if(item.kind === 'folder') return setActiveLocation(item)
@@ -35,7 +35,7 @@ const PhoneFinder = ({handleTxtOpen}: Props) => {
         <PhoneNav color='text-black'/>
             <div className='w-full p-5 h-full '> 
                 <ul className='content w-full flex gap-5'>
-                    {activeLocation?.children?.map((item)=>(
+                    {(activeLocation as ChildType)?.children?.map((item)=>(
                     <li
                     key={item.id}
                     className='text-black'

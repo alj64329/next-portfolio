@@ -1,30 +1,27 @@
-import { TxtType } from '@/app/constants'
+import { ChildType, GrandChildType } from '@/app/constants'
 import useLocationStore from '@/app/store/locations'
-import useWindowStore from '@/app/store/window'
 import React, { useEffect, useState } from 'react'
-import WindowControlls from '../window/WindowControlls'
 
-type Props = {}
 
-const PhoneText = (props: Props) => {
-    const {windows} = useWindowStore()
+const PhoneText = () => {
     const {activeLocation, setActiveLocation} = useLocationStore()
-    const [data, setData] =useState<TxtType>({
+    const [data, setData] =useState<GrandChildType>({
+        id:0,
         name:"",
-        description:[],
-        image:"",
-        subtitle:""
+        iconImg:"",
+        kind:"",
+        fileType:""
     })
 
     useEffect(()=>{
-    const children = activeLocation.children
+    const children = (activeLocation as ChildType).children as GrandChildType[]
     const txt = children.find(item => item.fileType === "txt")?? null
     console.log(txt)
 
     if(!txt) return
 
     setData(txt)
-    },[])
+    },[activeLocation])
   return (
     <div 
     className="absolute z-20 top-[5%] h-full">

@@ -4,9 +4,8 @@ import dayjs from 'dayjs'
 import React from 'react'
 import { IoPartlySunnyOutline } from 'react-icons/io5'
 
-type Props = {}
 
-const Navbar = (props: Props) => {
+const Navbar = () => {
   return (
     <div 
     className='py-1 lg:py-2 px-4 bg-gray-700 flex justify-between items-center'>

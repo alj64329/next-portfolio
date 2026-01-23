@@ -3,18 +3,17 @@ import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'
 import React, { useEffect } from 'react'
 import WindowControlls from './WindowControlls'
-import { locations } from '@/app/constants'
+import { ChildType, GrandChildType, locations } from '@/app/constants'
 import WindowWrapper from '@/app/hoc/WindowWrapper'
-import { clImages } from '@/app/constants/cloudinary'
 import { CldImage } from 'next-cloudinary'
 
-type Props = {}
 
-const Finder = (props: Props) => {
+
+const Finder = () => {
     const {openWindow} = useWindowStore()
     const {activeLocation, setActiveLocation} = useLocationStore()
 
-    const openItem =(item:any)=>{
+    const openItem =(item:GrandChildType)=>{
         if(item.fileType === 'pdf') return openWindow('resume')
 
         if(item.kind === 'folder') return setActiveLocation(item)
@@ -56,7 +55,7 @@ const Finder = (props: Props) => {
 
             <div className='w-full'>
                 <ul className='content h-full w-full'>
-                    {activeLocation?.children?.map((item)=>(
+                    {(activeLocation as ChildType)?.children?.map((item)=>(
                     <li
                     key={item.id}
                     className={`${item.position} text-black`}

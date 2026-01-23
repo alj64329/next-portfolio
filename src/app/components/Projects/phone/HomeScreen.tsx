@@ -4,7 +4,7 @@ import PhoneDock from './PhoneDock'
 
 type Props = {
   setFinderOpen:()=>void,
-  isFinderOpen:boolean
+  isFinderOpen:boolean,
 }
 
 const HomeScreen = ({setFinderOpen,isFinderOpen}: Props) => {

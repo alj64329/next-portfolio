@@ -9,9 +9,9 @@ import WindowHome from './window/WindowHome'
 
 
 gsap.registerPlugin(Draggable)
-type Props = {}
 
-const ProjectWindow = (props: Props) => {
+
+const ProjectWindow = () => {
   const containerRef = useRef<HTMLDivElement>(null)
   const [isFinderOpen, setIsFinderOpen] = useState(false)
 

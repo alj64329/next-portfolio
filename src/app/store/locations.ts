@@ -1,16 +1,16 @@
 import { create } from "zustand";
 import { immer } from "zustand/middleware/immer";
-import { locations, type LocationType } from "../constants";
+import { ChildType, GrandChildType, locations, type LocationType } from "../constants";
 
 const DEFAULT_LOCATION = locations.work
 
 interface StateType{
-    activeLocation:LocationType | null 
+    activeLocation:LocationType | null |ChildType |GrandChildType
 }
 
 interface LocationStoreTye{
-    activeLocation:LocationType
-    setActiveLocation:(location:LocationType|null|any)=>void
+    activeLocation:LocationType|ChildType|GrandChildType
+    setActiveLocation:(location:LocationType|null|ChildType|GrandChildType)=>void
     resetActiveLocation:()=>void
 }
 

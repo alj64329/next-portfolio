@@ -1,13 +1,11 @@
 'use client'
-import Image from 'next/image'
+
 import React, { useRef } from 'react'
 import Button from './Button'
 import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import TextPlugin from 'gsap/TextPlugin'
-import { CldImage } from 'next-cloudinary'
-import { clImages } from '../constants/cloudinary'
 import { BiLogoTypescript, BiLogoCss3,BiLogoTailwindCss,BiLogoMongodb   } from "react-icons/bi";
 import { RiJavascriptFill,RiNextjsFill } from "react-icons/ri";
 import { FaHtml5, FaReact } from "react-icons/fa";
@@ -129,9 +127,10 @@ const About = () => {
             <div className='flex justify-center pb-8'>
                 <div className='skill-container flex text-white p-8 gap-2 text-3xl lg:text-5xl'>
                     {
-                        skills.map(item=>(
+                        skills.map((item,index)=>(
                             <item.icon
                             className={`${item.color}`}
+                            key={index}
                             />
                         ))
                     }

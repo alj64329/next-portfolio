@@ -1,10 +1,5 @@
-"use client";
-import { useGSAP } from "@gsap/react";
-import gsap from "gsap";
-import { ScrollTrigger } from "gsap/all";
-import { ScrollToPlugin } from "gsap/ScrollToPlugin";
-import Image from "next/image";
-import React, { useEffect } from "react";
+
+import React from "react";
 import CodePlayGround from "./codePlayground/CodePlayGround";
 
 const Description = () => {

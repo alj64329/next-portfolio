@@ -6,11 +6,10 @@ import Laptop from "./Laptop";
 import { PerspectiveCamera } from "@react-three/drei";
 import { useMediaQuery } from "usehooks-ts";
 import { CldImage } from "next-cloudinary";
-import { clImages } from "../constants/cloudinary";
 import Image from "next/image";
 
 const Hero = () => {
-  const [position, setPosition] = useState<number | null>(null);
+  // const [position, setPosition] = useState<number | null>(null);
   const [showCanvas, setShowCanvas] = useState(false)
 
   
@@ -54,7 +53,7 @@ const Hero = () => {
             <div className="rounded-border z-22">
               <div className="text-xl font-red font-bold">...</div>
               <a href="#contact" className="text-xl font-bold ">
-                Let's Connect
+                Let&apos;s Connect
               </a>
             </div>
           </div>

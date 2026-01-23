@@ -22,24 +22,6 @@ export interface TechStackType{
     items:string[]
 }
 
-const navLinks:NavLinkType[]= [
-  {
-    id: 1,
-    name: "Projects",
-    type: "finder",
-  },
-  {
-    id: 3,
-    name: "Contact",
-    type: "contact",
-  },
-  {
-    id: 4,
-    name: "Resume",
-    type: "resume",
-  },
-];
-
 const navIcons:NavIconType[] = [
   {
     id: 1,
@@ -102,7 +84,6 @@ const techStack:TechStackType[]= [
 
 
 export {
-  navLinks,
   navIcons,
   phoneNavIcons,
   techStack,
@@ -114,8 +95,32 @@ export interface LocationType{
   name:string,
   icon:IconType,
   kind:string,
-  children:any[]
+  children:ChildType[]
 }
+
+export type ChildType={
+  id:number,
+  name:string,
+  iconImg:string,
+  kind:string
+  position:string,
+  windowPosition:string,
+  children:GrandChildType[]
+}
+
+export type GrandChildType={
+  id:number,
+  name:string,
+  iconImg:string,
+  kind:string
+  fileType:string,
+  image?:string,
+  subtitle?:string
+  position?:string,
+  description?:string[]
+  href?:string
+}
+
 
 const WORK_LOCATION = {
   id: 1,

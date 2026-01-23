@@ -1,9 +1,8 @@
 import dayjs from 'dayjs'
 import React from 'react'
 
-type Props = {}
 
-const LockScreen = (props: Props) => {
+const LockScreen = () => {
   return (
     <div
     className='h-full relative'>

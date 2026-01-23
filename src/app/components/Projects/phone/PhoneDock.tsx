@@ -1,5 +1,5 @@
 
-import { locations } from '@/app/constants'
+import { ChildType, locations } from '@/app/constants'
 import { clImages } from '@/app/constants/cloudinary'
 import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'
@@ -14,12 +14,13 @@ const projects = locations.work.children ?? []
 const PhoneDock = ({setFinderOpen}: Props) => {
     const {setActiveLocation} = useLocationStore()
     const {openWindow} = useWindowStore()
-    const [isMounted, setIsMounted] = useState(false);
+    // const [isMounted, setIsMounted] = useState(false);
 
-    const handleOpenProjectFinder = (project:any)=>{
+    const handleOpenProjectFinder = (project:ChildType)=>{
+        console.log(project)
         setFinderOpen()
         setActiveLocation(project)
-        openWindow(project)
+        // openWindow(project)
         openWindow("finder")
     }
   return (

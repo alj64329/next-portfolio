@@ -1,5 +1,5 @@
 'use client'
-import { locations } from '@/app/constants'
+import { ChildType, locations } from '@/app/constants'
 import { clImages } from '@/app/constants/cloudinary'
 import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'
@@ -20,10 +20,10 @@ const WindowHome = ({boundsRef, setFinderOpen}: Props) => {
     const {openWindow} = useWindowStore()
     const [isMounted, setIsMounted] = useState(false);
 
-    const handleOpenProjectFinder = (project:any)=>{
+    const handleOpenProjectFinder = (project:ChildType)=>{
         setFinderOpen()
         setActiveLocation(project)
-        openWindow(project)
+        // openWindow(project)
         openWindow("finder")
     }
 

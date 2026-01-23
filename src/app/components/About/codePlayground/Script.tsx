@@ -1,4 +1,4 @@
-import { files, FnType } from '@/app/constants/codeplayground';
+import { files } from '@/app/constants/codeplayground';
 import React, { useState } from 'react'
 import { IoCodeSlashOutline } from "react-icons/io5";
 
@@ -9,7 +9,7 @@ type Props = {
 type TabId ='about-script'|"techStach-script"|"experience-script"
 
 const Script = ({handleExcusion}: Props) => {
-    const [lines, setLines] = useState<number>(1)
+
     const [activeTab, setActiveTab] = useState<TabId>('about-script')
 
     const activeFn =files.find(item=> item.id === activeTab)
@@ -32,7 +32,7 @@ const Script = ({handleExcusion}: Props) => {
                 Run
             </button>
         </div>
-        {/* Tab */}
+
         <div className='grid grid-cols-3 md:grid-cols-5 text-sm'>
             {files.map(tab =>(
                 <button

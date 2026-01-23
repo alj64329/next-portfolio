@@ -3,10 +3,8 @@ import Script from './Script'
 import Preview from './Preview'
 import { files, FnType } from '@/app/constants/codeplayground'
 
-type Props = {}
 
-
-const CodePlayGround = (props: Props) => {
+const CodePlayGround = () => {
     const [activeFile, setActiveTab] = useState<FnType>(files[0])
     const [isExcuted, setIsExcuted] = useState<boolean>(false)
 

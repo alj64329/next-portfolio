@@ -1,31 +1,30 @@
 import useWindowStore from "@/app/store/window"
 import WindowControlls from "./WindowControlls"
-import { TxtType } from "@/app/constants"
+import { ChildType, GrandChildType } from "@/app/constants"
 import WindowWrapper from "@/app/hoc/WindowWrapper"
 import { useEffect, useState } from "react"
 import useLocationStore from "@/app/store/locations"
 
-
-type Props = {}
-
-const Text = (props: Props) => {
-    const {windows} = useWindowStore()
+const Text = () => {
     const {activeLocation, setActiveLocation} = useLocationStore()
-    const [data, setData] =useState<TxtType>({
+    const [data, setData] =useState<GrandChildType>({
+        id:0,
         name:"",
-        description:[],
-        image:"",
-        subtitle:""
+        iconImg:"",
+        kind:"",
+        fileType:""
     })
 
     useEffect(()=>{
-    const children = activeLocation.children
+    const children = (activeLocation as ChildType).children as GrandChildType[]
+
     const txt = children.find(item => item.fileType === "txt")?? null
 
     if(!txt) return
 
     setData(txt)
     },[])
+    
   return (
     <div className="h-[20%]">
         <div className='window-header'>
