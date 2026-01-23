@@ -6,11 +6,6 @@ import { useGSAP } from '@gsap/react'
 import gsap from 'gsap'
 import Draggable from 'gsap/Draggable'
 
-export interface Props {
-    Component: React.Component<{props:any}>
-    windowKey:string
-}
-
 export interface PropsDataType{
     displayName:string
     name:string
@@ -18,8 +13,8 @@ export interface PropsDataType{
 
 gsap.registerPlugin(Draggable)
 
-const WindowWrapper = (Component:React.ComponentType<{props:any}>, windowKey:string) => {
-  const Wrapped = (props:any) =>{
+const WindowWrapper = <P extends object>(Component:React.ComponentType<P>, windowKey:string) => {
+  const Wrapped = (props:P) =>{
     const {focusWindow, windows} = useWindowStore()
     const {isOpen, zIndex} = windows[windowKey]
     const ref = useRef<HTMLElement>(null)
