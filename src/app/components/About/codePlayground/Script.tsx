@@ -49,7 +49,7 @@ const Script = ({handleExcusion}: Props) => {
             <div className='min-h-[250px] font-sourceCode'>
                 <div
                 className='text-[#6A9955]'>
-                    //{activeFn?.comment}
+                    {"//"}{activeFn?.comment}
                 </div>
                 { activeFn?.fn};
             </div>
