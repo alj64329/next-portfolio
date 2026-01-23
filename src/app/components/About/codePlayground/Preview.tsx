@@ -40,9 +40,9 @@ const Preview = ({outputFile, isShow}: Props) => {
                                 <div
                                 key={`point-${index}`}
                                 className={`${index===line.points.length-1&&"pb-4"}`}> 
-                                {/* About me */}
+
                                     {outputFile.id==="about-script"&&item}
-                                {/* Experiences  */}
+
                                     {outputFile.id==="experience-script"&&
                                 <span>
                                 <FaCheck
@@ -51,7 +51,7 @@ const Preview = ({outputFile, isShow}: Props) => {
                                 </span> 
                                     }
 
-                                {/* TechStack */}
+
                                 {outputFile.id==="techStach-script"&&
                                 `${item}${index<line.points.length-1?" | ":""}`
                                 }

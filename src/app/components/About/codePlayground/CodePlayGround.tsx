@@ -26,7 +26,7 @@ const CodePlayGround = () => {
   return (
     <div className='flex flex-col lg:flex-row w-[90%] max-w-[1200px] mx-auto gap-3'>
         <Script handleExcusion={handleExcusion}/>
-        <Preview outputFile={activeFile} isShow={isExcuted} />
+        <Preview outputFile={activeFile} isShow={isExcuted} />   
     </div>
   )
 }
