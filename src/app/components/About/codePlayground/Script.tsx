@@ -1,3 +1,4 @@
+'use client'
 import { files } from '@/app/constants/codeplayground';
 import React, { useState } from 'react'
 import { IoCodeSlashOutline } from "react-icons/io5";

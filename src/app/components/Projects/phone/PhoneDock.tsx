@@ -1,3 +1,4 @@
+'use client'
 
 import { ChildType, locations } from '@/app/constants'
 import { clImages } from '@/app/constants/cloudinary'

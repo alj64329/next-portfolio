@@ -1,3 +1,5 @@
+'use client'
+
 import { ChildType, GrandChildType } from '@/app/constants'
 import useLocationStore from '@/app/store/locations'
 import React, { useEffect, useState } from 'react'

@@ -1,3 +1,4 @@
+'use client'
 import useWindowStore from "@/app/store/window"
 import WindowControlls from "./WindowControlls"
 import { ChildType, GrandChildType } from "@/app/constants"

@@ -1,3 +1,4 @@
+'use client'
 import { ChildType, GrandChildType, locations } from '@/app/constants'
 import useLocationStore from '@/app/store/locations'
 import useWindowStore from '@/app/store/window'

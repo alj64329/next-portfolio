@@ -7,8 +7,6 @@ import { ChildType, GrandChildType, locations } from '@/app/constants'
 import WindowWrapper from '@/app/hoc/WindowWrapper'
 import { CldImage } from 'next-cloudinary'
 
-
-
 const Finder = () => {
     const {openWindow} = useWindowStore()
     const {activeLocation, setActiveLocation} = useLocationStore()
